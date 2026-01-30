@@ -1,9 +1,18 @@
 services:
   - type: web
     name: merigarage
-    runtime: docker
+    runtime: php
     plan: free
     branch: main
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader --no-interaction
+      mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache
+      chmod -R 775 storage bootstrap/cache
+      php artisan migrate --force --no-interaction
+      php artisan config:cache
+      php artisan route:cache
+      php artisan view:cache
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     envVars:
       - key: APP_NAME
         value: MeriGarage
@@ -13,12 +22,6 @@ services:
         value: base64:NjEnxP9Oimzcw4z41fJBSUI0Ovvdv7fL8NpRPVyregA=
       - key: APP_DEBUG
         value: false
-      - key: APP_URL
-        sync: false
-      - key: LOG_CHANNEL
-        value: stack
-      - key: LOG_LEVEL
-        value: error
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
@@ -41,18 +44,8 @@ services:
         fromDatabase:
           name: merigarage-db
           property: password
-      - key: BROADCAST_DRIVER
-        value: log
-      - key: CACHE_DRIVER
-        value: file
-      - key: FILESYSTEM_DISK
-        value: local
-      - key: QUEUE_CONNECTION
-        value: sync
       - key: SESSION_DRIVER
         value: file
-      - key: SESSION_LIFETIME
-        value: 120
       - key: MAIL_MAILER
         value: smtp
       - key: MAIL_HOST
@@ -67,12 +60,8 @@ services:
         value: Ajay2050#@
       - key: MAIL_FROM_ADDRESS
         value: alert@merigarage.com
-      - key: MAIL_FROM_NAME
-        value: MeriGarage
       - key: MASTER_LOGIN_ENABLED
         value: true
-      - key: MASTER_LOGIN_PASSWORD_HASH
-        value: $2y$10$V9FGJUu2Hio06pV0osP1x..83CmBZr.TGUCmUmvw.6JnT5L7axr5e
       - key: MASTER_LOGIN_PASSWORD
         value: master@123
       - key: WEBSITE_URL
