@@ -1,0 +1,201 @@
+
+          .my-button-popup {
+            font-size: 1em;
+            padding: 10px;
+            color: #fff;
+                border: none;
+    border-radius: 0px 20px 0px 17px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+			    background: #ffd700!important;
+				    margin-top: -10px;
+    margin-left: 15px;
+          }
+		  
+          .my-button-popup:hover {
+                  background: #2381ce!important;
+          }
+		  
+		  
+		  
+          .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: visible;
+            opacity: 1;
+          }
+          .overlay:target {
+            visibility: hidden;
+            opacity: 0;
+            display:none
+          }
+          .popup { position: relative;
+            margin: 70px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            
+            transition: all 5s ease-in-out; }
+
+.popup .close       { position: absolute; top: 20px; right: 30px; transition: all 200ms;
+                      font-size: 30px; font-weight: bold; text-decoration: none; color: #333; }
+.popup .close:hover { color: orange; }
+.popup .content     { max-height: 30%; overflow: auto; }
+
+/*.popup h2 { margin-top: 0; color: #333; font-family: Tahoma, Arial, sans-serif; }*/
+
+
+
+.form_right{
+  background: #fff;
+    padding: 0px 35px;
+    /* position: relative; */
+    border-top: 10px solid #242f45;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    height:471px;
+	width: 42%;     margin-top: 10px;    margin-right: 77px;
+    border-radius: 81px 14px 65px 0px;
+}
+.form_head{
+    padding-top: 30px;
+}
+.form_head h4{
+	    font-size: 16px;
+    font-family: sans-serif;
+	color:#288feb;
+}
+.form_head p{
+    font-size: 35px;
+    padding: 20px 0px;
+}
+.form_me input{
+	    border: 0px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    height: 40px;
+    box-shadow: none;
+    outline: none;
+    border-radius: 0px;
+	    margin: 8px 0px;
+		    background: none;
+}
+.form_me input:focus{
+	box-shadow:0px 0px 0px #fff;
+}
+.form_me select{
+		    border: 0px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    height: 40px;
+    box-shadow: none;
+    outline: none;
+    border-radius: 0px;
+	    margin: 25px 0px
+		    background: none;;
+}
+.form_me textarea{
+	border: 0px;
+	font-size: 16px;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0;
+	height: 40px;
+	box-shadow: none;
+	outline: none;
+	border-radius: 0px;
+	margin: 25px 0px;
+	    background: none;
+}
+.form_me textarea:focus{
+	box-shadow:0px 0px 0px #fff;
+}
+.form_me textarea::placeholder{
+	font-size:13px;
+}
+.form_me button{
+	 margin: 25px 0px;
+}
+.form_me input::placeholder{
+	font-size:13px;
+}
+.form_me_submit{
+    margin-top: 40px;
+}
+.form_me_submit input{
+    width: 30%;
+    background: #288feb!important;
+    border: 0px;
+    border-radius: 50px;
+    margin: 0px auto;
+    display: block;
+    padding: 10px 15px 10px 15px;
+	  
+    color: white;
+}
+
+
+.overlay-my{z-index:99999999;height:500px;}
+
+
+
+.close-my{ margin-top: 14px;}
+
+
+
+.spinner-eff .circle-2 {
+    width: 66.6%;
+    height: 66.6%;
+    background-color: #64b5f6;
+    top: 16.5%;
+    animation: pulse-2 1.6s linear 0s infinite;
+}
+
+
+
+
+.spinner-eff .circle-1 {
+    width: 100%;
+    height: 100%;
+    background-color: #0e6eff;
+    top: 0;
+    animation: pulse 1.6s linear 0s infinite;
+}
+.one_bo_head_p{margin-left:79px; font-size:15px;}
+
+@media (max-width:575.98px){
+.form_right{
+  background: #fff;
+    padding: 0px 25px;
+    /* position: relative; */  
+    height:640px;
+	width: 82%;     margin-top: 10px;    margin-right: 20px;
+  
+}
+
+.form_righ-2{ height:auto !important;}
+
+.smGlobalBtn{width: 25px;
+height: 25px; font-size:15px;
+border: 1px solid#ddd;}
+
+.one_bo_head{ margin-left:79px; font-size:18px;}
+.one_bo_head_p{margin-left:79px; font-size:12px;}
+ 
+ .form_me_submit input{ width:100%;}
+ .header-1 #header-wrap{ padding:10px 15px 10px 15px !important;}
+	}
+
+ @media (max-width:480px){
+.smGlobalBtn{width: 20px; height: 20px; font-size:12px; margin:0px 3px 0px 3px; padding:0px;}	 
+	.navbar-toggler{ width:30px !important; height:30px;}
+#header-wrap .col-lg-12{ padding:0px; margin:0px;}
+	 }
